@@ -6,9 +6,10 @@ function JobListing({job}) {
     const [showFullDescription, setShowFullDescription] = useState(false)
     let description = job.description
 
-    if (!showFullDescription) {
-        description = description.substring(0, 90) + '....'
+    if (!showFullDescription && description.length > 90) {
+        description = description.substring(0, 90) + '....';
     }
+
 
 
     return (
